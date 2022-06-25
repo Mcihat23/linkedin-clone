@@ -137,24 +137,13 @@ export function postArticleAPI(payload) {
   };
 }
 
-// export function getArticlesAPI() {
-//   return async (dispatch) => {
-//     let payload;
-//     const dataRef = collection(db, "articles");
-//     const data = await getDocs(dataRef);
-//     payload = data.docs.map((doc) => doc.data());
-//     console.log(payload);
-//     dispatch(getArticles(payload));
-//   };
-// }
-
 export function getArticlesAPI() {
   return (dispatch) => {
     let payload;
     const q = query(collection(db, "articles"), orderBy("actor.date", "desc"));
     onSnapshot(q, (snapshot) => {
       payload = snapshot.docs.map((doc) => doc.data());
-      console.log(payload);
+      // console.log(payload);
       dispatch(getArticles(payload));
     });
   };

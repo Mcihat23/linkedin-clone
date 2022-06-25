@@ -58,6 +58,7 @@ function Header(props) {
             </NavList>
 
             <User>
+              {/* {console.log(props.user)} */}
               <a>
                 {props.user && props.user.photoURL ? (
                   <img src={props.user.photoURL} alt="" />
