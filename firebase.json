@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build/linkedin-clone",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
